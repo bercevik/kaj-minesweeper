@@ -1,0 +1,338 @@
+/*****************************MainPage css START*********************************/
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.mainPage {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.mainPage_basic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+}
+
+.mainPage--open {
+    visibility: visible;
+    transform: scale(1);
+    opacity: 1;
+}
+
+.mainPage_close {
+    position: absolute;
+    z-index: 9999;
+    top: 15px;
+    right: 15px;
+    font-size: 50px;
+    font-family: sans-serif;
+    width: auto;
+    height: auto;
+    outline: none;
+    background: none;
+    border: none;
+    border-radius: 50%;
+    color: #ffffff;
+    user-select: none;
+    cursor: pointer;
+    transition: background 0.1s;
+}
+
+.mainPage_rulesetClose {
+    color: black;
+}
+
+
+.mainPage_close:active,
+.mainPage_close:hover,
+.mainPage_link:active,
+.mainPage_link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+}
+
+.mainPage_link {
+    line-height: 2;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 25px;
+    padding: 0 20px;
+    transition: background 0.1s;
+}
+
+.mainPage_title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainPage_video {
+    display: flex;
+    width: 400px;
+    height: 400px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.mainPage_game {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainPage_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+}
+/*****************************MainPage css END*********************************/
+/*****************************Leaderboard css START*********************************/
+.mainPage_leaderboard {
+    font-size: small;
+    text-align: center;
+    font-family: sans-serif;
+    color: darkslateblue;
+}
+
+.mainPage_leaderboard h2 {
+    color: #fff;
+    padding: 20px;
+}
+
+.leaderboard {
+    display: grid;
+    grid-template-columns: repeat(5, 200px);
+    grid-template-rows: repeat(5, 60px);
+    grid-gap: 80px 40px;
+    justify-content: center;
+}
+
+.drop-zone {
+    background-color: lightgray;
+    padding: 10px;
+    border-radius: 15px;
+    width: 200px;
+    height: 100px;
+    margin: 10px;
+}
+
+.drop-zone.place1 {
+    background: gold;
+    color: crimson;
+    font-family: Arial, serif;
+    font-size: medium;
+}
+
+.drop-zone.place2 {
+    background: silver;
+    color: crimson;
+    font-family: Arial, serif;
+    font-size: medium;
+}
+
+.drop-zone.place3 {
+    background: #cd7f32;
+    color: crimson;
+    font-family: Arial, serif;
+    font-size: medium;
+}
+
+.leaderboard > .drop-zone:not(:last-child) {
+    margin-right: 10px;
+}
+
+.leaderboard > .drop-zone:nth-child(3n+1) {
+    margin-right: 0;
+}
+
+/*****************************Leaderboard css END*********************************/
+/*****************************Rulset + playbutton css START*********************************/
+
+.mainPage_ruleset {
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: left;
+    box-sizing: border-box;
+    font-size: 1.5rem;
+}
+
+.mainPage_ruleset h2 {
+    text-align: center;
+}
+
+.mainPage_ruleset p {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.connectionOnline {
+    position: fixed;
+    top: 0;
+    right: 0;
+    text-align: center;
+    color: green;
+    height: 100px;
+    width: 100px;
+}
+
+.connectionOffline {
+    position: fixed;
+    top: 10px;
+    right: 50px;
+    text-align: center;
+    color: red;
+    height: 100px;
+    width: 200px;
+}
+
+.mainPage_play {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*position: absolute;*/
+    top: calc(50% + 210px);
+    left: 50%;
+    /*TODO AD TRANSFORMATION*/
+    /*transform: translateX(-50%);*/
+    width: 200px;
+    height: 50px;
+    background-color: #000;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    box-shadow: 0 0 10px #00f;
+    animation: glow 2s infinite alternate;
+}
+@keyframes glow {
+    0% {
+        background-color: #000;
+        box-shadow: 0 0 10px #00f;
+    }
+    100% {
+        background-color: #f00;
+        box-shadow: 0 0 20px #f00, 0 0 40px #f00;
+    }
+}
+
+.mainPage_open:hover,
+.mainPage_open:focus {
+    background-color: #f00;
+    box-shadow: 0 0 20px #f00, 0 0 40px #f00;
+    animation: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+/*****************************Rulset + playbutton css END*********************************/
+/*************************SVG CSS START**************************/
+#Layer_1 {
+    width: 400px;
+    display: block;
+    margin: 10% auto;
+
+}
+
+@keyframes boom {
+    0% {
+        stroke-dashoffset: 2000;
+        fill-opacity: 0;
+    }
+    50% {
+        stroke-dashoffset: 0;
+        fill-opacity: 0;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        fill-opacity: 1;
+    }
+}
+
+.boom {
+    fill-opacity: 0;
+    stroke: #fff;
+    stroke-width: 3px;
+    stroke-dashoffset: 2000;
+    stroke-dasharray: 2000;
+    animation: boom 6s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.mainPage_LooseScreen {
+    color: crimson;
+}
+/*************************SVG CSS END**************************/
+/*@media only screen and (max-width: 480px) {*/
+/*    header {*/
+/*        padding: 10px;*/
+/*    }*/
+
+/*    .mainPage {*/
+/*        padding: 10px;*/
+/*    }*/
+
+/*    .mainPage_video {*/
+/*        width: 250px;*/
+/*        height: 250px;*/
+/*    }*/
+
+/*    .mainPage_game {*/
+/*        top: calc(50% + 150px);*/
+/*    }*/
+
+/*    .mainPage_form input[type="text"],*/
+/*    .mainPage_form input[type="email"],*/
+/*    .mainPage_form input[type="password"],*/
+/*    .mainPage_form input[type="time"] {*/
+/*        padding: 3px;*/
+/*        margin-bottom: 5px;*/
+/*    }*/
+/*}*/
+
+
+/*@media only screen and (max-width: 480px) {*/
+/*    * {*/
+/*    }*/
+/*}*/
